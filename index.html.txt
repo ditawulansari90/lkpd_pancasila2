@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD Interaktif Pendidikan Pancasila Kelas 5 SD</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk ikon menarik -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font: Fredoka / Quicksand untuk tampilan ramah anak -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #f0fdf4;
+        }
+        h1, h2, h3, .font-fun {
+            font-family: 'Fredoka', cursive;
+        }
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            body {
+                background: white;
+            }
+            .card-box {
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-amber-50 min-h-screen text-slate-800 pb-12">
+
+    <header class="bg-amber-400 border-b-4 border-amber-500 py-6 px-4 mb-6 shadow-lg text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="inline-block bg-white text-amber-700 font-bold px-4 py-1 rounded-full text-sm mb-2 shadow-sm">
+                <i class="fa-solid fa-graduation-cap mr-1"></i> Kelas 5 SD / MI
+            </span>
+            <h1 class="text-2xl md:text-4xl font-extrabold text-amber-950 tracking-wide drop-shadow">
+                LEMBAR KERJA PESERTA DIDIK (LKPD) INTERAKTIF
+            </h1>
+            <p class="text-lg font-semibold text-amber-900 mt-1">
+                Pendidikan Pancasila: Norma, Hak, dan Kewajiban
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 space-y-8">
+
+        <section class="bg-white p-6 rounded-2xl shadow-md border-2 border-amber-200 card-box">
+            <h2 class="text-xl font-bold text-amber-700 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-id-card text-2xl"></i> Identitas Detektif Cilik
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-slate-600 mb-1">Nama Lengkap:</label>
+                    <input type="text" id="inputNama" placeholder="Masukkan namamu..." class="w-full px-4 py-2 border-2 border-slate-200 rounded-xl focus:border-amber-400 focus:outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-600 mb-1">Kelas:</label>
+                    <input type="text" id="inputKelas" value="5 (Lima)" class="w-full px-4 py-2 border-2 border-slate-200 rounded-xl focus:border-amber-400 focus:outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-600 mb-1">No. Absen:</label>
+                    <input type="number" id="inputAbsen" placeholder="Nomor..." class="w-full px-4 py-2 border-2 border-slate-200 rounded-xl focus:border-amber-400 focus:outline-none transition">
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-2xl shadow-md border-2 border-emerald-200 card-box">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-emerald-700 flex items-center gap-2">
+                    <i class="fa-solid fa-star text-amber-400"></i> Bagian 1: Misi Harian Anak Hebat
+                </h2>
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">
+                    Skor Maks: 20
+                </span>
+            </div>
+            <p class="text-sm text-slate-600 mb-4">
+                Beri tanda centang <i class="fa-solid fa-check text-emerald-600"></i> pada kegiatan yang sudah kamu lakukan hari ini! (Setiap poin bernilai 4)
+            </p>
+
+            <div class="space-y-3" id="bagian1List">
+                <!-- Javascript will populate or static standard HTML -->
+                <label class="flex items-center p-3 bg-emerald-50 hover:bg-emerald-100 rounded-xl cursor-pointer transition">
+                    <input type="checkbox" class="b1-check w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500" onchange="playClickSound()">
+                    <span class="ml-3 font-medium text-slate-700">1. Merapikan tempat tidur sendiri setelah bangun tidur.</span>
+                </label>
+                <label class="flex items-center p-3 bg-emerald-50 hover:bg-emerald-100 rounded-xl cursor-pointer transition">
+                    <input type="checkbox" class="b1-check w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500" onchange="playClickSound()">
+                    <span class="ml-3 font-medium text-slate-700">2. Berpamitan dan mencium tangan orang tua sebelum pergi sekolah.</span>
+                </label>
+                <label class="flex items-center p-3 bg-emerald-50 hover:bg-emerald-100 rounded-xl cursor-pointer transition">
+                    <input type="checkbox" class="b1-check w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500" onchange="playClickSound()">
+                    <span class="ml-3 font-medium text-slate-700">3. Membuang sampah pada tempatnya.</span>
+                </label>
+                <label class="flex items-center p-3 bg-emerald-50 hover:bg-emerald-100 rounded-xl cursor-pointer transition">
+                    <input type="checkbox" class="b1-check w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500" onchange="playClickSound()">
+                    <span class="ml-3 font-medium text-slate-700">4. Mengucapkan kata "tolong", "maaf", dan "terima kasih".</span>
+                </label>
+                <label class="flex items-center p-3 bg-emerald-50 hover:bg-emerald-100 rounded-xl cursor-pointer transition">
+                    <input type="checkbox" class="b1-check w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500" onchange="playClickSound()">
+                    <span class="ml-3 font-medium text-slate-700">5. Belajar dan mengerjakan tugas tanpa harus dipaksa.</span>
+                </label>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-2xl shadow-md border-2 border-blue-200 card-box">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-blue-700 flex items-center gap-2">
+                    <i class="fa-solid fa-scale-balanced"></i> Bagian 2: Milah-Milih "Hak" & "Kewajiban"
+                </h2>
+                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">
+                    Skor Maks: 30
+                </span>
+            </div>
+            <p class="text-sm text-slate-600 mb-4">
+                Pilihlah apakah pernyataan di bawah ini merupakan <strong>HAK</strong> atau <strong>KEWAJIBAN</strong> di rumah! (Setiap soal bernilai 5)
+            </p>
+
+            <div class="space-y-4" id="bagian2Container">
+                <!-- Soal 1 -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <span class="font-medium text-slate-700">1. Mendapatkan kasih sayang dan perhatian dari ayah dan ibu.</span>
+                    <div class="flex gap-2">
+                        <button onclick="selectB2(this, 1, 'HAK')" class="b2-btn-1 border-2 border-blue-400 px-4 py-1.5 rounded-lg text-sm font-bold text-blue-600 hover:bg-blue-500 hover:text-white transition">HAK</button>
+                        <button onclick="selectB2(this, 1, 'KEWAJIBAN')" class="b2-btn-1 border-2 border-amber-400 px-4 py-1.5 rounded-lg text-sm font-bold text-amber-600 hover:bg-amber-500 hover:text-white transition">KEWAJIBAN</button>
+                    </div>
+                </div>
+                <!-- Soal 2 -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <span class="font-medium text-slate-700">2. Membantu orang tua membersihkan dan merapikan rumah.</span>
+                    <div class="flex gap-2">
+                        <button onclick="selectB2(this, 2, 'HAK')" class="b2-btn-2 border-2 border-blue-400 px-4 py-1.5 rounded-lg text-sm font-bold text-blue-600 hover:bg-blue-500 hover:text-white transition">HAK</button>
+                        <button onclick="selectB2(this, 2, 'KEWAJIBAN')" class="b2-btn-2 border-2 border-amber-400 px-4 py-1.5 rounded-lg text-sm font-bold text-amber-600 hover:bg-amber-500 hover:text-white transition">KEWAJIBAN</button>
+                    </div>
+                </div>
+                <!-- Soal 3 -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <span class="font-medium text-slate-700">3. Mendapatkan makanan yang bergizi dan pakaian yang layak.</span>
+                    <div class="flex gap-2">
+                        <button onclick="selectB2(this, 3, 'HAK')" class="b2-btn-3 border-2 border-blue-400 px-4 py-1.5 rounded-lg text-sm font-bold text-blue-600 hover:bg-blue-500 hover:text-white transition">HAK</button>
+                        <button onclick="selectB2(this, 3, 'KEWAJIBAN')" class="b2-btn-3 border-2 border-amber-400 px-4 py-1.5 rounded-lg text-sm font-bold text-amber-600 hover:bg-amber-500 hover:text-white transition">KEWAJIBAN</button>
+                    </div>
+                </div>
+                <!-- Soal 4 -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <span class="font-medium text-slate-700">4. Menghormati dan mematuhi nasehat kedua orang tua.</span>
+                    <div class="flex gap-2">
+                        <button onclick="selectB2(this, 4, 'HAK')" class="b2-btn-4 border-2 border-blue-400 px-4 py-1.5 rounded-lg text-sm font-bold text-blue-600 hover:bg-blue-500 hover:text-white transition">HAK</button>
+                        <button onclick="selectB2(this, 4, 'KEWAJIBAN')" class="b2-btn-4 border-2 border-amber-400 px-4 py-1.5 rounded-lg text-sm font-bold text-amber-600 hover:bg-amber-500 hover:text-white transition">KEWAJIBAN</button>
+                    </div>
+                </div>
+                <!-- Soal 5 -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <span class="font-medium text-slate-700">5. Menggunakan waktu istirahat dan bermain yang cukup.</span>
+                    <div class="flex gap-2">
+                        <button onclick="selectB2(this, 5, 'HAK')" class="b2-btn-5 border-2 border-blue-400 px-4 py-1.5 rounded-lg text-sm font-bold text-blue-600 hover:bg-blue-500 hover:text-white transition">HAK</button>
+                        <button onclick="selectB2(this, 5, 'KEWAJIBAN')" class="b2-btn-5 border-2 border-amber-400 px-4 py-1.5 rounded-lg text-sm font-bold text-amber-600 hover:bg-amber-500 hover:text-white transition">KEWAJIBAN</button>
+                    </div>
+                </div>
+                <!-- Soal 6 -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <span class="font-medium text-slate-700">6. Menjaga kebersihan dan keamanan lingkungan rumah.</span>
+                    <div class="flex gap-2">
+                        <button onclick="selectB2(this, 6, 'HAK')" class="b2-btn-6 border-2 border-blue-400 px-4 py-1.5 rounded-lg text-sm font-bold text-blue-600 hover:bg-blue-500 hover:text-white transition">HAK</button>
+                        <button onclick="selectB2(this, 6, 'KEWAJIBAN')" class="b2-btn-6 border-2 border-amber-400 px-4 py-1.5 rounded-lg text-sm font-bold text-amber-600 hover:bg-amber-500 hover:text-white transition">KEWAJIBAN</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-2xl shadow-md border-2 border-purple-200 card-box">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-purple-700 flex items-center gap-2">
+                    <i class="fa-solid fa-magnifying-glass"></i> Bagian 3: Detektif Norma
+                </h2>
+                <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">
+                    Skor Maks: 25
+                </span>
+            </div>
+            <p class="text-sm text-slate-600 mb-4">
+                Tentukan jenis norma yang paling tepat untuk situasi berikut! (Setiap soal bernilai 5)
+            </p>
+
+            <div class="space-y-4">
+                <!-- Soal 1 -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <p class="font-medium text-slate-700 mb-2">1. Berdoa sebelum dan sesudah makan sesuai dengan keyakinan masing-masing.</p>
+                    <select class="b3-select w-full md:w-1/2 p-2.5 border-2 border-slate-200 rounded-xl focus:border-purple-400 focus:outline-none" onchange="playClickSound()">
+                        <option value="">-- Pilih Jenis Norma --</option>
+                        <option value="Agama">Norma Agama</option>
+                        <option value="Kesusilaan">Norma Kesusilaan</option>
+                        <option value="Kesopanan">Norma Kesopanan</option>
+                        <option value="Hukum">Norma Hukum / Aturan Rumah</option>
+                    </select>
+                </div>
+                <!-- Soal 2 -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <p class="font-medium text-slate-700 mb-2">2. Merasa menyesal dan malu karena telah berbohong kepada ibu.</p>
+                    <select class="b3-select w-full md:w-1/2 p-2.5 border-2 border-slate-200 rounded-xl focus:border-purple-400 focus:outline-none" onchange="playClickSound()">
+                        <option value="">-- Pilih Jenis Norma --</option>
+                        <option value="Agama">Norma Agama</option>
+                        <option value="Kesusilaan">Norma Kesusilaan</option>
+                        <option value="Kesopanan">Norma Kesopanan</option>
+                        <option value="Hukum">Norma Hukum / Aturan Rumah</option>
+                    </select>
+                </div>
+                <!-- Soal 3 -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <p class="font-medium text-slate-700 mb-2">3. Menyapa tetangga dengan ramah dan tidak berbicara kasar kepada orang tua.</p>
+                    <select class="b3-select w-full md:w-1/2 p-2.5 border-2 border-slate-200 rounded-xl focus:border-purple-400 focus:outline-none" onchange="playClickSound()">
+                        <option value="">-- Pilih Jenis Norma --</option>
+                        <option value="Agama">Norma Agama</option>
+                        <option value="Kesusilaan">Norma Kesusilaan</option>
+                        <option value="Kesopanan">Norma Kesopanan</option>
+                        <option value="Hukum">Norma Hukum / Aturan Rumah</option>
+                    </select>
+                </div>
+                <!-- Soal 4 -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <p class="font-medium text-slate-700 mb-2">4. Mematuhi batas waktu maksimal menonton TV atau bermain HP di rumah.</p>
+                    <select class="b3-select w-full md:w-1/2 p-2.5 border-2 border-slate-200 rounded-xl focus:border-purple-400 focus:outline-none" onchange="playClickSound()">
+                        <option value="">-- Pilih Jenis Norma --</option>
+                        <option value="Agama">Norma Agama</option>
+                        <option value="Kesusilaan">Norma Kesusilaan</option>
+                        <option value="Kesopanan">Norma Kesopanan</option>
+                        <option value="Hukum">Norma Hukum / Aturan Rumah</option>
+                    </select>
+                </div>
+                <!-- Soal 5 -->
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <p class="font-medium text-slate-700 mb-2">5. Menolak untuk mengambil barang milik teman tanpa izin.</p>
+                    <select class="b3-select w-full md:w-1/2 p-2.5 border-2 border-slate-200 rounded-xl focus:border-purple-400 focus:outline-none" onchange="playClickSound()">
+                        <option value="">-- Pilih Jenis Norma --</option>
+                        <option value="Agama">Norma Agama</option>
+                        <option value="Kesusilaan">Norma Kesusilaan</option>
+                        <option value="Kesopanan">Norma Kesopanan</option>
+                        <option value="Hukum">Norma Hukum / Aturan Rumah</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-2xl shadow-md border-2 border-rose-200 card-box">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-rose-700 flex items-center gap-2">
+                    <i class="fa-solid fa-lightbulb"></i> Bagian 4: Studi Kasus "Detektif Pembuat Solusi"
+                </h2>
+                <span class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full">
+                    Skor Maks: 25
+                </span>
+            </div>
+
+            <!-- Cerita -->
+            <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 mb-6 text-slate-700 text-sm leading-relaxed">
+                <h3 class="font-bold text-amber-900 mb-1 flex items-center gap-2">
+                    <i class="fa-solid fa-book-open"></i> Cerita: Kamar Dipo yang Berantakan
+                </h3>
+                <p>
+                    Setiap pulang sekolah, Dipo langsung menaruh tas di lantai, melempar kaus kaki sembarangan, dan bermain gim sampai sore. Dipo sering menuntut ibunya untuk segera menyiapkan makanan kesukaannya dan marah jika bajunya belum disetrika. Padahal, ibu sedang sibuk mengurus adik yang masih balita. Dipo lupa akan kewajibannya untuk menjaga kebersihan kamarnya sendiri.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block font-medium text-slate-700 mb-2">
+                        1. Apa kesalahan atau pelanggaran kewajiban yang dilakukan Dipo dalam cerita di atas?
+                    </label>
+                    <textarea id="b4_soal1" rows="2" class="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-rose-400 focus:outline-none" placeholder="Tuliskan jawabanmu..."></textarea>
+                </div>
+                <div>
+                    <label class="block font-medium text-slate-700 mb-2">
+                        2. Solusi apa yang sebaiknya Dipo lakukan agar Hak dan Kewajibannya di rumah berjalan secara seimbang?
+                    </label>
+                    <textarea id="b4_soal2" rows="2" class="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-rose-400 focus:outline-none" placeholder="Tuliskan jawabanmu..."></textarea>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center space-y-4 no-print">
+            <button onclick="hitungNilai()" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-extrabold text-lg px-8 py-4 rounded-2xl shadow-lg transform active:scale-95 transition flex items-center gap-2 mx-auto">
+                <i class="fa-solid fa-calculator"></i> Hitung Nilai & Periksa Hasil
+            </button>
+        </section>
+
+        <!-- Ringkasan Hasil (Menampilkan nilai setelah dihitung) -->
+        <section id="hasilSection" class="bg-gradient-to-br from-amber-100 to-amber-200 p-6 rounded-2xl border-4 border-amber-400 shadow-xl hidden">
+            <div class="text-center">
+                <h3 class="text-2xl font-black text-amber-900">
+                    <i class="fa-solid fa-trophy text-amber-500 mr-2"></i> Laporan Hasil LKPD
+                </h3>
+                <p class="text-slate-700 font-semibold mt-1" id="ringkasanSiswa"></p>
+                <div class="my-4 inline-block bg-white px-8 py-4 rounded-3xl border-4 border-amber-300 shadow-md">
+                    <span class="text-sm text-slate-500 font-bold block uppercase">Total Nilai Kamu</span>
+                    <span class="text-5xl font-black text-emerald-600" id="totalSkor">0</span>
+                    <span class="text-slate-400 font-bold text-xl">/ 100</span>
+                </div>
+                <div id="umpanBalik" class="text-lg font-bold text-amber-900 mb-6"></div>
+
+                <button onclick="cetakLaporan()" class="bg-slate-800 hover:bg-slate-900 text-white font-bold px-6 py-3 rounded-xl shadow transition inline-flex items-center gap-2">
+                    <i class="fa-solid fa-print"></i> Cetak / Simpan PDF Laporan
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Web Audio API untuk efek suara
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        let audioCtx;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new AudioContext();
+            }
+        }
+
+        function playClickSound() {
+            initAudio();
+            if (!audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.08);
+            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.08);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.08);
+        }
+
+        function playSuccessSound() {
+            initAudio();
+            if (!audioCtx) return;
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(523.25, now); // C5
+            osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
+            osc.frequency.setValueAtTime(783.99, now + 0.2); // G5
+            osc.frequency.setValueAtTime(1046.50, now + 0.3); // C6
+            gain.gain.setValueAtTime(0.2, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now);
+            osc.stop(now + 0.5);
+        }
+
+        // State Jawaban Bagian 2
+        const b2Answers = {};
+        const b2Kunci = {
+            1: 'HAK',
+            2: 'KEWAJIBAN',
+            3: 'HAK',
+            4: 'KEWAJIBAN',
+            5: 'HAK',
+            6: 'KEWAJIBAN'
+        };
+
+        // Kunci Bagian 3
+        const b3Kunci = ['Agama', 'Kesusilaan', 'Kesopanan', 'Hukum', 'Kesusilaan'];
+
+        function selectB2(btn, soalNum, val) {
+            playClickSound();
+            b2Answers[soalNum] = val;
+            
+            // Reset style tombol dalam grup yang sama
+            const buttons = document.querySelectorAll(`.b2-btn-${soalNum}`);
+            buttons.forEach(b => {
+                b.classList.remove('bg-blue-600', 'bg-amber-600', 'text-white');
+                if (b.innerText === 'HAK') {
+                    b.classList.add('text-blue-600');
+                } else {
+                    b.classList.add('text-amber-600');
+                }
+            });
+
+            // Highlight tombol terpilih
+            if (val === 'HAK') {
+                btn.classList.add('bg-blue-600', 'text-white');
+                btn.classList.remove('text-blue-600');
+            } else {
+                btn.classList.add('bg-amber-600', 'text-white');
+                btn.classList.remove('text-amber-600');
+            }
+        }
+
+        function hitungNilai() {
+            // Validasi nama
+            const nama = document.getElementById('inputNama').value.trim();
+            if (!nama) {
+                alert('Silakan masukkan nama lengkapmu terlebih dahulu!');
+                document.getElementById('inputNama').focus();
+                return;
+            }
+
+            let totalSkor = 0;
+
+            // Bagian 1: Maks 20 (5 x 4)
+            const b1Checks = document.querySelectorAll('.b1-check');
+            let b1Count = 0;
+            b1Checks.forEach(ch => {
+                if (ch.checked) b1Count++;
+            });
+            const skorB1 = b1Count * 4;
+            totalSkor += skorB1;
+
+            // Bagian 2: Maks 30 (6 x 5)
+            let skorB2 = 0;
+            for (let i = 1; i <= 6; i++) {
+                if (b2Answers[i] === b2Kunci[i]) {
+                    skorB2 += 5;
+                }
+            }
+            totalSkor += skorB2;
+
+            // Bagian 3: Maks 25 (5 x 5)
+            let skorB3 = 0;
+            const b3Selects = document.querySelectorAll('.b3-select');
+            b3Selects.forEach((sel, idx) => {
+                if (sel.value === b3Kunci[idx]) {
+                    skorB3 += 5;
+                }
+            });
+            totalSkor += skorB3;
+
+            // Bagian 4: Maks 25 (2 Soal Terbuka)
+            // Dinilai berdasarkan kelengkapan isian
+            let skorB4 = 0;
+            const ans1 = document.getElementById('b4_soal1').value.trim();
+            const ans2 = document.getElementById('b4_soal2').value.trim();
+            if (ans1.length > 5) skorB4 += 12.5;
+            if (ans2.length > 5) skorB4 += 12.5;
+            totalSkor += Math.round(skorB4);
+
+            // Tampilkan Hasil
+            document.getElementById('totalSkor').innerText = totalSkor;
+            const kelas = document.getElementById('inputKelas').value;
+            const absen = document.getElementById('inputAbsen').value;
+            document.getElementById('ringkasanSiswa').innerText = `Nama: ${nama} | Kelas: ${kelas} | No. Absen: ${absen || '-'}`;
+
+            let pesan = "";
+            if (totalSkor >= 85) {
+                pesan = "🌟 Luar Biasa! Kamu adalah Detektif Norma & Anak Hebat sejati!";
+            } else if (totalSkor >= 70) {
+                pesan = "👍 Bagus Sekali! Kamu sudah memahami hak, kewajiban, dan norma dengan baik.";
+            } else {
+                pesan = "💪 Tetap Semangat! Pelajari lagi materi norma dan hak kewajiban ya!";
+            }
+            document.getElementById('umpanBalik').innerText = pesan;
+
+            const hasilSec = document.getElementById('hasilSection');
+            hasilSec.classList.remove('hidden');
+            hasilSec.scrollIntoView({ behavior: 'smooth' });
+
+            playSuccessSound();
+        }
+
+        function cetakLaporan() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
