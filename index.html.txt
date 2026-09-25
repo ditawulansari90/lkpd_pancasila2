@@ -53,6 +53,7 @@
 
     <main class="max-w-4xl mx-auto px-4 space-y-8">
 
+        <!-- IDENTITAS SISWA (DROPDOWN 17 SISWA) -->
         <section class="bg-white p-6 rounded-2xl shadow-md border-2 border-amber-200 card-box">
             <h2 class="text-xl font-bold text-amber-700 mb-4 flex items-center gap-2">
                 <i class="fa-solid fa-id-card text-2xl"></i> Identitas Detektif Cilik
@@ -60,7 +61,26 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                     <label class="block text-sm font-bold text-slate-600 mb-1">Nama Lengkap:</label>
-                    <input type="text" id="inputNama" placeholder="Masukkan namamu..." class="w-full px-4 py-2 border-2 border-slate-200 rounded-xl focus:border-amber-400 focus:outline-none transition">
+                    <select id="inputNama" class="w-full px-4 py-2 border-2 border-slate-200 rounded-xl focus:border-amber-400 focus:outline-none transition bg-white font-medium">
+                        <option value="">-- Pilih Nama Kamu --</option>
+                        <option value="Ahmad Bibi Prianto">Ahmad Bibi Prianto</option>
+                        <option value="Ahmad Ragil Setiawan">Ahmad Ragil Setiawan</option>
+                        <option value="Ahmad Aidillah">Ahmad Aidillah</option>
+                        <option value="An Nisa Alimah">An Nisa Alimah</option>
+                        <option value="Azahra Radya Utami">Azahra Radya Utami</option>
+                        <option value="Fatkhul Mahdi Mubarok">Fatkhul Mahdi Mubarok</option>
+                        <option value="Gibran Albyananda Putra">Gibran Albyananda Putra</option>
+                        <option value="Muhammad Dandiansyah">Muhammad Dandiansyah</option>
+                        <option value="Muhammad Irawan">Muhammad Irawan</option>
+                        <option value="Muhammad Rava Azka Putra">Muhammad Rava Azka Putra</option>
+                        <option value="Munawarah Annisa Rahma">Munawarah Annisa Rahma</option>
+                        <option value="Nafisa Nur Adila Sari">Nafisa Nur Adila Sari</option>
+                        <option value="Naila Lailatul Zahwa">Naila Lailatul Zahwa</option>
+                        <option value="Rangga Shyura">Rangga Shyura</option>
+                        <option value="Silfa Ananta Nur Afifah">Silfa Ananta Nur Afifah</option>
+                        <option value="Widya Erlin Sa'diyah">Widya Erlin Sa'diyah</option>
+                        <option value="Yusep Maumali">Yusep Maumali</option>
+                    </select>
                 </div>
                 <div>
                     <label class="block text-sm font-bold text-slate-600 mb-1">Kelas:</label>
@@ -73,6 +93,7 @@
             </div>
         </section>
 
+        <!-- BAGIAN 1 -->
         <section class="bg-white p-6 rounded-2xl shadow-md border-2 border-emerald-200 card-box">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-xl font-bold text-emerald-700 flex items-center gap-2">
@@ -87,7 +108,6 @@
             </p>
 
             <div class="space-y-3" id="bagian1List">
-                <!-- Javascript will populate or static standard HTML -->
                 <label class="flex items-center p-3 bg-emerald-50 hover:bg-emerald-100 rounded-xl cursor-pointer transition">
                     <input type="checkbox" class="b1-check w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500" onchange="playClickSound()">
                     <span class="ml-3 font-medium text-slate-700">1. Merapikan tempat tidur sendiri setelah bangun tidur.</span>
@@ -111,6 +131,7 @@
             </div>
         </section>
 
+        <!-- BAGIAN 2 -->
         <section class="bg-white p-6 rounded-2xl shadow-md border-2 border-blue-200 card-box">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-xl font-bold text-blue-700 flex items-center gap-2">
@@ -176,6 +197,7 @@
             </div>
         </section>
 
+        <!-- BAGIAN 3 -->
         <section class="bg-white p-6 rounded-2xl shadow-md border-2 border-purple-200 card-box">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-xl font-bold text-purple-700 flex items-center gap-2">
@@ -248,6 +270,7 @@
             </div>
         </section>
 
+        <!-- BAGIAN 4 -->
         <section class="bg-white p-6 rounded-2xl shadow-md border-2 border-rose-200 card-box">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-xl font-bold text-rose-700 flex items-center gap-2">
@@ -284,38 +307,54 @@
             </div>
         </section>
 
+        <!-- TOMBOL HITUNG -->
         <section class="text-center space-y-4 no-print">
             <button onclick="hitungNilai()" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-extrabold text-lg px-8 py-4 rounded-2xl shadow-lg transform active:scale-95 transition flex items-center gap-2 mx-auto">
                 <i class="fa-solid fa-calculator"></i> Hitung Nilai & Periksa Hasil
             </button>
         </section>
 
-        <!-- Ringkasan Hasil (Menampilkan nilai setelah dihitung) -->
+        <!-- LAPORAN HASIL SKOR & TOMBOL KIRIM KE GURU -->
         <section id="hasilSection" class="bg-gradient-to-br from-amber-100 to-amber-200 p-6 rounded-2xl border-4 border-amber-400 shadow-xl hidden">
-            <div class="text-center">
+            <div class="text-center space-y-4">
                 <h3 class="text-2xl font-black text-amber-900">
                     <i class="fa-solid fa-trophy text-amber-500 mr-2"></i> Laporan Hasil LKPD
                 </h3>
-                <p class="text-slate-700 font-semibold mt-1" id="ringkasanSiswa"></p>
+                <p class="text-slate-700 font-semibold" id="ringkasanSiswa"></p>
                 <div class="my-4 inline-block bg-white px-8 py-4 rounded-3xl border-4 border-amber-300 shadow-md">
                     <span class="text-sm text-slate-500 font-bold block uppercase">Total Nilai Kamu</span>
                     <span class="text-5xl font-black text-emerald-600" id="totalSkor">0</span>
                     <span class="text-slate-400 font-bold text-xl">/ 100</span>
                 </div>
-                <div id="umpanBalik" class="text-lg font-bold text-amber-900 mb-6"></div>
+                <div id="umpanBalik" class="text-lg font-bold text-amber-900 mb-4"></div>
 
-                <button onclick="cetakLaporan()" class="bg-slate-800 hover:bg-slate-900 text-white font-bold px-6 py-3 rounded-xl shadow transition inline-flex items-center gap-2">
-                    <i class="fa-solid fa-print"></i> Cetak / Simpan PDF Laporan
-                </button>
+                <!-- BOX KIRIM NILAI KE GOOGLE SHEETS -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-400 shadow-sm max-w-md mx-auto no-print space-y-3">
+                    <h4 class="font-bold text-slate-800 text-base">Setorkan Nilai ke Google Sheets Guru</h4>
+                    <button id="btnKirimGuru" onclick="kirimKeGuru()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-lg py-3 px-6 rounded-xl shadow transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> 🚀 Kirim Laporan Nilai ke Guru
+                    </button>
+                    <p id="statusKirim" class="font-bold text-sm min-h-[20px]"></p>
+                </div>
+
+                <div class="pt-2">
+                    <button onclick="cetakLaporan()" class="bg-slate-800 hover:bg-slate-900 text-white font-bold px-6 py-3 rounded-xl shadow transition inline-flex items-center gap-2">
+                        <i class="fa-solid fa-print"></i> Cetak / Simpan PDF Laporan
+                    </button>
+                </div>
             </div>
         </section>
 
     </main>
 
     <script>
+        // LINK GOOGLE APPS SCRIPT REKAP GURU
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzXZQcWGKAYLbz9X9O2_-Qs4mIlvtf9M0xlMa-0ZwxuRBmoE9dhjmXDyGjEUAxMpEHe/exec";
+
         // Web Audio API untuk efek suara
         const AudioContext = window.AudioContext || window.webkitAudioContext;
         let audioCtx;
+        let totalSkorAkhir = 0;
 
         function initAudio() {
             if (!audioCtx) {
@@ -346,10 +385,10 @@
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
             osc.type = 'triangle';
-            osc.frequency.setValueAtTime(523.25, now); // C5
-            osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
-            osc.frequency.setValueAtTime(783.99, now + 0.2); // G5
-            osc.frequency.setValueAtTime(1046.50, now + 0.3); // C6
+            osc.frequency.setValueAtTime(523.25, now);
+            osc.frequency.setValueAtTime(659.25, now + 0.1);
+            osc.frequency.setValueAtTime(783.99, now + 0.2);
+            osc.frequency.setValueAtTime(1046.50, now + 0.3);
             gain.gain.setValueAtTime(0.2, now);
             gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
             osc.connect(gain);
@@ -376,7 +415,6 @@
             playClickSound();
             b2Answers[soalNum] = val;
             
-            // Reset style tombol dalam grup yang sama
             const buttons = document.querySelectorAll(`.b2-btn-${soalNum}`);
             buttons.forEach(b => {
                 b.classList.remove('bg-blue-600', 'bg-amber-600', 'text-white');
@@ -387,7 +425,6 @@
                 }
             });
 
-            // Highlight tombol terpilih
             if (val === 'HAK') {
                 btn.classList.add('bg-blue-600', 'text-white');
                 btn.classList.remove('text-blue-600');
@@ -398,46 +435,39 @@
         }
 
         function hitungNilai() {
-            // Validasi nama
-            const nama = document.getElementById('inputNama').value.trim();
+            const nama = document.getElementById('inputNama').value;
             if (!nama) {
-                alert('Silakan masukkan nama lengkapmu terlebih dahulu!');
+                alert('Silakan pilih nama lengkapmu terlebih dahulu!');
                 document.getElementById('inputNama').focus();
                 return;
             }
 
             let totalSkor = 0;
 
-            // Bagian 1: Maks 20 (5 x 4)
+            // Bagian 1
             const b1Checks = document.querySelectorAll('.b1-check');
             let b1Count = 0;
             b1Checks.forEach(ch => {
                 if (ch.checked) b1Count++;
             });
-            const skorB1 = b1Count * 4;
-            totalSkor += skorB1;
+            totalSkor += (b1Count * 4);
 
-            // Bagian 2: Maks 30 (6 x 5)
-            let skorB2 = 0;
+            // Bagian 2
             for (let i = 1; i <= 6; i++) {
                 if (b2Answers[i] === b2Kunci[i]) {
-                    skorB2 += 5;
+                    totalSkor += 5;
                 }
             }
-            totalSkor += skorB2;
 
-            // Bagian 3: Maks 25 (5 x 5)
-            let skorB3 = 0;
+            // Bagian 3
             const b3Selects = document.querySelectorAll('.b3-select');
             b3Selects.forEach((sel, idx) => {
                 if (sel.value === b3Kunci[idx]) {
-                    skorB3 += 5;
+                    totalSkor += 5;
                 }
             });
-            totalSkor += skorB3;
 
-            // Bagian 4: Maks 25 (2 Soal Terbuka)
-            // Dinilai berdasarkan kelengkapan isian
+            // Bagian 4
             let skorB4 = 0;
             const ans1 = document.getElementById('b4_soal1').value.trim();
             const ans2 = document.getElementById('b4_soal2').value.trim();
@@ -445,16 +475,18 @@
             if (ans2.length > 5) skorB4 += 12.5;
             totalSkor += Math.round(skorB4);
 
+            totalSkorAkhir = totalSkor;
+
             // Tampilkan Hasil
-            document.getElementById('totalSkor').innerText = totalSkor;
+            document.getElementById('totalSkor').innerText = totalSkorAkhir;
             const kelas = document.getElementById('inputKelas').value;
             const absen = document.getElementById('inputAbsen').value;
             document.getElementById('ringkasanSiswa').innerText = `Nama: ${nama} | Kelas: ${kelas} | No. Absen: ${absen || '-'}`;
 
             let pesan = "";
-            if (totalSkor >= 85) {
+            if (totalSkorAkhir >= 85) {
                 pesan = "🌟 Luar Biasa! Kamu adalah Detektif Norma & Anak Hebat sejati!";
-            } else if (totalSkor >= 70) {
+            } else if (totalSkorAkhir >= 70) {
                 pesan = "👍 Bagus Sekali! Kamu sudah memahami hak, kewajiban, dan norma dengan baik.";
             } else {
                 pesan = "💪 Tetap Semangat! Pelajari lagi materi norma dan hak kewajiban ya!";
@@ -466,6 +498,51 @@
             hasilSec.scrollIntoView({ behavior: 'smooth' });
 
             playSuccessSound();
+        }
+
+        // FUNGSI KIRIM NILAI KE GOOGLE SHEETS GURU
+        function kirimKeGuru() {
+            const nama = document.getElementById('inputNama').value;
+            const kelas = document.getElementById('inputKelas').value;
+            const status = document.getElementById("statusKirim");
+            const btnKirim = document.getElementById("btnKirimGuru");
+
+            if (!nama) {
+                alert("Pilih nama siswa terlebih dahulu!");
+                return;
+            }
+
+            status.className = "font-bold text-sm text-blue-600";
+            status.innerText = "Sedang mengirim data ke guru...";
+            btnKirim.disabled = true;
+            btnKirim.classList.add("opacity-50", "cursor-not-allowed");
+
+            const payload = {
+                namaSiswa: nama,
+                kelas: kelas,
+                mataPelajaran: "Pendidikan Pancasila",
+                namaTugas: "LKPD Pancasila",
+                nilai: totalSkorAkhir
+            };
+
+            fetch(SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                status.className = "font-bold text-sm text-emerald-600";
+                status.innerText = "✅ Berhasil! Nilai sudah masuk ke rekap Google Sheets guru.";
+                btnKirim.disabled = false;
+                btnKirim.classList.remove("opacity-50", "cursor-not-allowed");
+            })
+            .catch(err => {
+                status.className = "font-bold text-sm text-rose-600";
+                status.innerText = "❌ Gagal mengirim. Periksa koneksi internet.";
+                btnKirim.disabled = false;
+                btnKirim.classList.remove("opacity-50", "cursor-not-allowed");
+            });
         }
 
         function cetakLaporan() {
